@@ -29,7 +29,7 @@
     <![endif]-->
 
     <!-- Custom styles for this template -->
-    <link href="../../statics/css/carousel.css" th:href="@{/css/carousel.css}" rel="stylesheet" />
+    <link href="../statics/css/carousel.css" th:href="@{/css/carousel.css}" rel="stylesheet" />
 </head>
 <!-- NAVBAR
 ================================================== -->
@@ -86,27 +86,129 @@
         <hr class="featurette-divider" />
 
         <div class="page-header">
-            <h1>All Product</h1>
+            <h1>This is Product Inventory Page</h1>
 
             <p class="lead">Checkout all the awesome products avaiable now!</p>
         </div>
 
-        <div class="contaniner">
-            <div class="row">
-                <div class="col-md-5">
-                    <img src="#" style="width:100%;height: 300px;" />
-                </div>
+        <div class="container">
+            <div class="form-group">
+                <form action="#" th:action="@{/admin/productInventory/addProduct}" th:object="${product}" th:method="POST" method="POST" class="form-horizontal">
 
-                <div class="col-md-5" th:object="${product}">
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+                        <div class="col-sm-10">
+                            <input type="text" th:field="*{name}" class="form-control"/>
+                        </div>
+                    </div>
 
-                    <p>Photo Thumb : <span th:text="*{name}"></span> </p>
-                    <p>Product Name : <span th:text="*{description}"></span> </p>
-                    <p>Category : <span th:text="*{category}"></span> </p>
-                    <p>Contidion : <span th:text="*{condition}"></span> </p>
-                    <p>Price : <span th:text="*{price}"></span> </p>
-                </div>
+
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">Category</label>
+
+                    <label class="radio-inline">
+                        <div class="col-sm-10">
+                        <input type="radio" name="category" id="category" value="instrument" /> instrument
+                        </div>
+                    </label>
+                    <label class="radio-inline">
+                        <div class="col-sm-10">
+                            <input type="radio" name="category" id="category" value="record" /> record
+                        </div>                    </label>
+                    <label class="radio-inline">
+                        <div class="col-sm-10">
+                            <input type="radio" name="category" id="category" value="accesory" /> accesory
+                        </div>                    </label>
+
+                    </div>
+
+
+
+
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">Description : </label>
+                        <div class="col-sm-10">
+                            <textarea type="text" th:field="*{description}"  class="form-control"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">Price</label>
+                        <div class="col-sm-10">
+                            <input type="text" th:field="*{price}"    class="form-control"/>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">Condition</label>
+
+                        <label class="radio-inline">
+                            <div class="col-sm-10">
+                                <input type="radio" name="Condition" id="Condition" value="new" /> new
+                            </div>
+                        </label>
+                        <label class="radio-inline">
+                            <div class="col-sm-10">
+                                <input type="radio" name="Condition" id="Condition" value="used" /> used
+                            </div>                    </label>
+
+                    </div>
+
+
+
+
+
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">Status</label>
+
+                        <label class="radio-inline">
+                            <div class="col-sm-10">
+                                <input type="radio" name="Status" id="Status" value="active" /> active
+                            </div>
+                        </label>
+                        <label class="radio-inline">
+                            <div class="col-sm-10">
+                                <input type="radio" name="Status" id="Status" value="inactive" /> inactive
+                            </div>                    </label>
+
+                    </div>
+
+
+
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">Unit in Stock : </label>
+                        <div class="col-sm-10">
+                            <input type="text" th:field="*{unitInStock}"   class="form-control"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">Manufacturer : </label>
+                        <div class="col-sm-10">
+                            <input type="text" th:field="*{manufacturer}"  class="form-control"/>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-default">Submit</button>
+                            <button type="submit" class="btn btn-default">Cancel</button>
+                        </div>
+                    </div>
+
+
+
+
+                </form>
             </div>
         </div>
+
 
 
         <!-- FOOTER -->
@@ -117,8 +219,6 @@
 
     </div>
 </div><!-- /.container -->
-
-
 
 
 <!-- Bootstrap core JavaScript
@@ -136,11 +236,3 @@
 
 </body>
 </html>
-
-
-
-
-
-
-
-

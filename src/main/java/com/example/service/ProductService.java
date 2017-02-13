@@ -13,5 +13,7 @@ public interface ProductService {
 
     public List<Product> getProducts();
     public Product findById(Long id);
+    void addProduct(Product product);
+    void deleteProduct(Long id);
 
 }

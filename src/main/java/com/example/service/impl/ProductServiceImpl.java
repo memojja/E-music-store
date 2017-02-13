@@ -12,7 +12,7 @@ import java.util.List;
  * Created by ari on 11.02.2017.
  */
 @Service
-public class ProductServiceImpl implements ProductService{
+public class ProductServiceImpl implements ProductService {
 
     private final ProductDao productDao;
 
@@ -23,7 +23,6 @@ public class ProductServiceImpl implements ProductService{
 
     @Override
     public List<Product> getProducts() {
-        fakeProduct();
         return (List) productDao.findAll();
     }
 
@@ -32,11 +31,15 @@ public class ProductServiceImpl implements ProductService{
         return productDao.findOne(id);
     }
 
-    private void fakeProduct(){
-
-        for (int i=0;i<10;i++){
-            productDao.save(    new Product("AA")  );
-        }
+    @Override
+    public void addProduct(Product product) {
+        productDao.save(product);
     }
+
+    @Override
+    public void deleteProduct(Long id) {
+        productDao.delete(id);
+    }
+
 
 }

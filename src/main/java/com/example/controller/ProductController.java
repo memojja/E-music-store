@@ -41,4 +41,5 @@ public class ProductController {
         return new ModelAndView("productDetail","product",productService.findById(id));
     }
 
+
 }

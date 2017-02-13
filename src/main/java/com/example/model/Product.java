@@ -20,10 +20,19 @@ public class Product {
     private String condition;
     private String status;
     private String manufacturer;
+    private int unitInStock;
 
     public Product(){}
     public Product(String name) {
         this.name = name;
+    }
+
+    public int getUnitInStock() {
+        return unitInStock;
+    }
+
+    public void setUnitInStock(int unitInStock) {
+        this.unitInStock = unitInStock;
     }
 
     public Long getId() {

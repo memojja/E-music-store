@@ -12,5 +12,4 @@ import java.util.List;
 @Repository
 public interface ProductDao extends CrudRepository<Product,Long>{
 
-
 }
